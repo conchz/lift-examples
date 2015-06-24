@@ -6,7 +6,7 @@ lazy val commonSettings = Seq(
 
 resolvers ++= Seq(
   Resolver.mavenLocal,
-  "releases" at "https://oss.sonatype.org/content/repositories/releases"
+  "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases"
 )
 
 seq(webSettings: _*)
