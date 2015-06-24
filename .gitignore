@@ -3,9 +3,10 @@
 
 # sbt specific
 .cache
-.history
 .lib/
 dist/*
+.idea/
+.idea_modules/
 target/
 lib_managed/
 src_managed/
