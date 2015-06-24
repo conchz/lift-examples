@@ -49,7 +49,7 @@ libraryDependencies ++= {
     "org.eclipse.jetty" % "jetty-plus" % "9.3.0.v20150612" % "container,test", // For Jetty Config
     "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
     "ch.qos.logback" % "logback-classic" % "1.1.3",
-    "org.specs2" %% "specs2" % "3.3.1" % "test",
+    "org.specs2" %% "specs2" % "2.3.12" % "test",
     "com.h2database" % "h2" % "1.4.187"
   )
 }
