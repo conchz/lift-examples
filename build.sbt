@@ -4,30 +4,6 @@ lazy val commonSettings = Seq(
   scalaVersion := "2.11.6"
 )
 
-resolvers ++= Seq(
-  Resolver.mavenLocal,
-  "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases"
-)
-
-seq(webSettings: _*)
-
-ivyScala := ivyScala.value map {
-  _.copy(overrideScalaVersion = true)
-}
-
-unmanagedSourceDirectories in Compile <<= baseDirectory { base =>
-  Seq(
-    base / "src/main/scala"
-  )
-}
-
-unmanagedSourceDirectories in Test <<= baseDirectory { base =>
-  Seq(
-    base / "src/main/webapp",
-    base / "src/test/scala"
-  )
-}
-
 javacOptions ++= Seq(
   "-source", "1.8",
   "-target", "1.8",
@@ -37,6 +13,12 @@ javacOptions ++= Seq(
 scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-unchecked"
+)
+
+resolvers ++= Seq(
+  Resolver.mavenLocal,
+  "typesafe repository" at "https://repo.typesafe.com/typesafe/releases/",
+  "sonatype repository" at "https://oss.sonatype.org/content/repositories/releases"
 )
 
 libraryDependencies ++= {
@@ -54,3 +36,23 @@ libraryDependencies ++= {
   )
 }
 
+webSettings
+
+port in container.Configuration := 8081
+
+ivyScala := ivyScala.value map {
+  _.copy(overrideScalaVersion = true)
+}
+
+unmanagedSourceDirectories in Compile <<= baseDirectory { base =>
+  Seq(
+    base / "src/main/scala"
+  )
+}
+
+unmanagedSourceDirectories in Test <<= baseDirectory { base =>
+  Seq(
+    base / "src/main/webapp",
+    base / "src/test/scala"
+  )
+}
