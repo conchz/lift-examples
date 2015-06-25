@@ -1,7 +1,7 @@
 lazy val commonSettings = Seq(
   name := "lift-examples",
   version := "1.0-snapshot",
-  scalaVersion := "2.11.6"
+  scalaVersion := "2.11.7"
 )
 
 javacOptions ++= Seq(

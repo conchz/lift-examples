@@ -16,7 +16,7 @@ import net.liftmodules.JQueryModule
  * to modify lift's environment
  */
 class Boot {
-  def boot {
+  def boot() {
     // where to search snippet
     LiftRules.addToPackages("code")
 
@@ -25,7 +25,7 @@ class Boot {
     //Show the spinny image when an Ajax call starts
     LiftRules.ajaxStart =
       Full(() => LiftRules.jsArtifacts.show("ajax-loader").cmd)
-    
+
     // Make the spinny image go away when it ends
     LiftRules.ajaxEnd =
       Full(() => LiftRules.jsArtifacts.hide("ajax-loader").cmd)
@@ -40,7 +40,7 @@ class Boot {
       new Html5Properties(r.userAgent))
 
     //Init the jQuery module, see http://liftweb.net/jquery for more information.
-    JQueryModule.InitParam.JQuery=JQueryModule.JQuery191
+    JQueryModule.InitParam.JQuery = JQueryModule.JQuery191
     JQueryModule.init()
   }
 }
