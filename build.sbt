@@ -1,8 +1,8 @@
-lazy val commonSettings = Seq(
-  name := "lift-examples",
-  version := "1.0-snapshot",
-  scalaVersion := "2.11.7"
-)
+name := "lift-examples"
+
+version := "1.0-snapshot"
+
+scalaVersion := "2.11.7"
 
 javacOptions ++= Seq(
   "-source", "1.8",
