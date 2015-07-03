@@ -1,7 +1,6 @@
 package com.github.dolphineor
 
 import com.github.dolphineor.controller.RootController
-import com.typesafe.config.ConfigFactory
 import net.liftmodules.JQueryModule
 import net.liftweb.common._
 import net.liftweb.http._
@@ -12,8 +11,6 @@ import net.liftweb.http._
  * to modify lift's environment
  */
 class Bootstrap extends Bootable {
-
-  lazy val conf = ConfigFactory.load()
 
   def boot() {
     // where to search snippet

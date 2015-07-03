@@ -35,7 +35,6 @@ libraryDependencies ++= {
     "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
     "org.json4s" %% "json4s-native" % "3.2.11",
     "ch.qos.logback" % "logback-classic" % "1.1.3",
-    "com.typesafe" % "config" % "1.3.0",
     "com.typesafe.slick" %% "slick" % "3.0.0",
     "org.specs2" %% "specs2" % "3.3.1" % "test"
   )
