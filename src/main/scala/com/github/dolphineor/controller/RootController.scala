@@ -1,11 +1,10 @@
-package code 
-package controller 
+package com.github.dolphineor.controller
 
-import net.liftweb.http._
-import net.liftweb.util._
 import java.util.Date
-import code.lib._
-import Helpers._
+
+import com.github.dolphineor.lib.DependencyFactory
+import net.liftweb.http._
+import net.liftweb.util.Helpers._
 
 /**
  * A simple MVC controller.  This controller will intercept

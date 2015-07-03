@@ -1,24 +1,23 @@
-package bootstrap.liftweb
+package com.github.dolphineor
 
-import net.liftweb._
-import util._
-import Helpers._
-
-import common._
-import http._
-
-import code.controller._
+import com.github.dolphineor.controller.RootController
+import com.typesafe.config.ConfigFactory
 import net.liftmodules.JQueryModule
+import net.liftweb.common._
+import net.liftweb.http._
 
 
 /**
  * A class that's instantiated early and run.  It allows the application
  * to modify lift's environment
  */
-class Boot {
+class Bootstrap extends Bootable {
+
+  lazy val conf = ConfigFactory.load()
+
   def boot() {
     // where to search snippet
-    LiftRules.addToPackages("code")
+    LiftRules.addToPackages("com.github.dolphineor")
 
     LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQueryArtifacts
 
