@@ -30,18 +30,23 @@ libraryDependencies ++= {
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
     "net.liftweb" %% "lift-mapper" % liftVersion % "compile",
     "net.liftmodules" %% "lift-jquery-module_2.6" % "2.8",
-    "org.eclipse.jetty" % "jetty-webapp" % "9.3.0.v20150612" % "container",
-    "org.eclipse.jetty" % "jetty-plus" % "9.3.0.v20150612" % "container", // For Jetty Config
-    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container" artifacts Artifact("javax.servlet", "jar", "jar"),
+    "org.eclipse.jetty" % "jetty-webapp" % "9.3.0.v20150612" % "container,test",
+    "org.eclipse.jetty" % "jetty-plus" % "9.3.0.v20150612" % "container,test", // For Jetty Config
+    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
     "org.json4s" %% "json4s-native" % "3.2.11",
     "ch.qos.logback" % "logback-classic" % "1.1.3",
     "com.typesafe.slick" %% "slick" % "3.0.0",
+    "com.zaxxer" % "HikariCP" % "2.3.8" % "compile",
+    "org.javassist" % "javassist" % "3.20.0-GA" % "compile",
+    "org.mariadb.jdbc" % "mariadb-java-client" % "1.1.9",
+    "org.slf4j" % "slf4j-log4j12" % "1.7.12",
     "org.specs2" %% "specs2" % "2.3.13" % "test"
   )
 }
 
 webSettings
 
+env in Compile := Some(file("./src/main/webapp/WEB-INF/jetty-env.xml").asFile)
 port in container.Configuration := 8081
 
 ivyScala := ivyScala.value map {
