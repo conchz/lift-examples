@@ -18,12 +18,11 @@
                         <Set name="username">cgdol</Set>
                         <Set name="password">test1234</Set>
                         <Set name="connectionTimeout">30000</Set>
-                        <Set name="maxLifetime">1800000</Set>
                         <Set name="maximumPoolSize">20</Set>
                         <Set name="connectionTestQuery">SELECT 1</Set>
                         <Call name="addDataSourceProperty">
                             <Arg>url</Arg>
-                            <Arg>jdbc:mariadb://localhost/test?characterEncoding=UTF-8</Arg>
+                            <Arg>jdbc:mariadb://localhost:3306/test?characterEncoding=UTF-8</Arg>
                         </Call>
                         <Call name="addDataSourceProperty">
                             <Arg>cachePrepStmts</Arg>
