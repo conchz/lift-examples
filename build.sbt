@@ -29,6 +29,7 @@ libraryDependencies ++= {
   Seq(
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
     "net.liftweb" %% "lift-mapper" % liftVersion % "compile",
+    "net.liftweb" %% "lift-squeryl-record" % liftVersion % "compile",
     "net.liftmodules" %% "lift-jquery-module_2.6" % "2.8",
     "org.eclipse.jetty" % "jetty-webapp" % "9.3.0.v20150612" % "container,test",
     "org.eclipse.jetty" % "jetty-plus" % "9.3.0.v20150612" % "container,test", // For Jetty Config
@@ -37,7 +38,7 @@ libraryDependencies ++= {
     "ch.qos.logback" % "logback-classic" % "1.1.3",
     "com.typesafe.slick" %% "slick" % "3.0.0",
     "com.zaxxer" % "HikariCP" % "2.3.8" % "compile",
-    "mysql" % "mysql-connector-java" % "5.1.36",
+    "mysql" % "mysql-connector-java" % "5.1.36" % "compile",
     "org.javassist" % "javassist" % "3.20.0-GA" % "compile",
     "org.slf4j" % "slf4j-log4j12" % "1.7.12",
     "org.specs2" %% "specs2" % "2.3.13" % "test"
