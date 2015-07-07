@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
-<Configure id="mariadbDataSource" class="org.eclipse.jetty.webapp.WebAppContext">
+<Configure id="mysqlDataSource" class="org.eclipse.jetty.webapp.WebAppContext">
     <New class="org.eclipse.jetty.plus.jndi.Resource">
         <Arg>
-            <Ref refid="mariadbDataSource"/>
+            <Ref refid="mysqlDataSource"/>
         </Arg>
         <Arg>jdbc/test</Arg>
         <Arg>
@@ -13,7 +13,7 @@
                     <New class="com.zaxxer.hikari.HikariDataSource">
                         <Arg>
                             <New class="com.zaxxer.hikari.HikariConfig">
-                                <Set name="dataSourceClassName">org.mariadb.jdbc.MySQLDataSource</Set>
+                                <Set name="dataSourceClassName">com.mysql.jdbc.jdbc2.optional.MysqlDataSource</Set>
                                 <Set name="username">cgdol</Set>
                                 <Set name="password">test1234</Set>
                                 <Set name="connectionTimeout">30000</Set>
@@ -21,20 +21,20 @@
                                 <Set name="connectionTestQuery">SELECT 1</Set>
                                 <Call name="addDataSourceProperty">
                                     <Arg>url</Arg>
-                                    <Arg>jdbc:mariadb://localhost:3306/test?characterEncoding=UTF-8</Arg>
+                                    <Arg>jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8</Arg>
                                 </Call>
-                                <!--<Call name="addDataSourceProperty">
+                                <Call name="addDataSourceProperty">
                                     <Arg>cachePrepStmts</Arg>
                                     <Arg>true</Arg>
                                 </Call>
                                 <Call name="addDataSourceProperty">
                                     <Arg>prepStmtCacheSize</Arg>
-                                    <Arg>256</Arg>
+                                    <Arg>300</Arg>
                                 </Call>
                                 <Call name="addDataSourceProperty">
                                     <Arg>prepStmtCacheSqlLimit</Arg>
                                     <Arg>2048</Arg>
-                                </Call>-->
+                                </Call>
                             </New>
                         </Arg>
                     </New>

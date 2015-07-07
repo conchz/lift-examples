@@ -37,8 +37,8 @@ libraryDependencies ++= {
     "ch.qos.logback" % "logback-classic" % "1.1.3",
     "com.typesafe.slick" %% "slick" % "3.0.0",
     "com.zaxxer" % "HikariCP" % "2.3.8" % "compile",
+    "mysql" % "mysql-connector-java" % "5.1.36",
     "org.javassist" % "javassist" % "3.20.0-GA" % "compile",
-    "org.mariadb.jdbc" % "mariadb-java-client" % "1.1.9",
     "org.slf4j" % "slf4j-log4j12" % "1.7.12",
     "org.specs2" %% "specs2" % "2.3.13" % "test"
   )
