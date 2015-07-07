@@ -1,9 +1,17 @@
 package com.github.dolphineor
 
+import java.sql.SQLException
+import javax.naming.InitialContext
+
 import com.github.dolphineor.controller.RootController
+import com.zaxxer.hikari.HikariDataSource
 import net.liftmodules.JQueryModule
 import net.liftweb.common._
 import net.liftweb.http._
+import net.liftweb.squerylrecord.SquerylRecord
+import net.liftweb.util.Props
+import org.squeryl.Session
+import org.squeryl.adapters.MySQLInnoDBAdapter
 
 
 /**
@@ -38,5 +46,17 @@ class Bootstrap extends Bootable {
     //Init the jQuery module, see http://liftweb.net/jquery for more information.
     JQueryModule.InitParam.JQuery = JQueryModule.JQuery191
     JQueryModule.init()
+
+    configureDB()
+
+  }
+
+  def configureDB(): Unit = {
+    val ds = new InitialContext().lookup(Props.get("default.jndi.name", "jdbc/lift")) match {
+      case dataSource: HikariDataSource => dataSource
+      case _ => throw new SQLException("HikariCP pool initialize failed")
+    }
+
+    SquerylRecord.initWithSquerylSession(Session.create(ds.getConnection, new MySQLInnoDBAdapter))
   }
 }
