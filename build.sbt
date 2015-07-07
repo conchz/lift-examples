@@ -52,16 +52,3 @@ port in container.Configuration := 8081
 ivyScala := ivyScala.value map {
   _.copy(overrideScalaVersion = true)
 }
-
-unmanagedSourceDirectories in Compile <<= baseDirectory { base =>
-  Seq(
-    base / "src/main/scala"
-  )
-}
-
-unmanagedSourceDirectories in Test <<= baseDirectory { base =>
-  Seq(
-    base / "src/main/webapp",
-    base / "src/test/scala"
-  )
-}
