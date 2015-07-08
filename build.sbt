@@ -31,6 +31,7 @@ libraryDependencies ++= {
     "net.liftweb" %% "lift-mapper" % liftVersion,
     "net.liftweb" %% "lift-squeryl-record" % liftVersion,
     "net.liftmodules" %% "lift-jquery-module_2.6" % "2.8",
+    "net.databinder.dispatch" %% "dispatch-core" % "0.11.3",
     "org.eclipse.jetty" % "jetty-webapp" % "9.3.0.v20150612" % "container,test",
     "org.eclipse.jetty" % "jetty-plus" % "9.3.0.v20150612" % "container,test", // For Jetty Config
     "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
