@@ -16,7 +16,7 @@
     <logger name="code.snippet" level="info"/>
     <logger name="net.liftweb" level="warn"/>
     <logger name="com.github.dolphineor.Bootstrap" level="info"/>
-    <root level="warn">
+    <root level="debug">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

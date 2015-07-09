@@ -1,9 +1,12 @@
 default.jndi.name=java:comp/env/jdbc/test
 
-# Google Account
-google.client_id=423230283117-c5n80h6s1jru2opis1chpalng9gnucnt.apps.googleusercontent.com
-google.client_secret=lnFXLyngNiOD3kg7ZKWb-Skt
+mail.user=xxx@gmail.com
+mail.password=password
 
-# LinkedIn Account
-linkedin.client.id=id
-linkedin.client.secret=secret
+## Google Account
+# google.client_id=id
+# google.client_secret=secret
+
+## LinkedIn Account
+# linkedin.client_id=id
+# linkedin.client_secret=secret
