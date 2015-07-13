@@ -28,16 +28,16 @@ libraryDependencies ++= {
   val liftVersion = "2.6.2"
   val jettyVersion = "9.3.0.v20150612"
   val metricsVersion = "3.0.2"
-  val servletVersion = "3.0.0.v201112011016"
   Seq(
     "net.liftweb" %% "lift-webkit" % liftVersion,
     "net.liftweb" %% "lift-mapper" % liftVersion,
+    "net.liftweb" %% "lift-actor" % liftVersion,
     "net.liftweb" %% "lift-squeryl-record" % liftVersion,
     "net.liftmodules" %% "lift-jquery-module_2.6" % "2.8",
     "net.databinder.dispatch" %% "dispatch-core" % "0.11.3",
     "org.eclipse.jetty" % "jetty-webapp" % jettyVersion % "container,test",
     "org.eclipse.jetty" % "jetty-plus" % jettyVersion % "container,test", // For Jetty Config
-    "org.eclipse.jetty.orbit" % "javax.servlet" % servletVersion % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
+    "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided,container,test" artifacts Artifact("javax.servlet-api", "jar", "jar"),
     "org.json4s" %% "json4s-native" % "3.2.11",
     "ch.qos.logback" % "logback-classic" % "1.1.3",
     "com.codahale.metrics" % "metrics-core" % metricsVersion,
