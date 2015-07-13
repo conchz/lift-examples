@@ -32,6 +32,7 @@ libraryDependencies ++= {
     "net.liftweb" %% "lift-webkit" % liftVersion,
     "net.liftweb" %% "lift-mapper" % liftVersion,
     "net.liftweb" %% "lift-actor" % liftVersion,
+    "net.liftweb" %% "lift-util" % liftVersion,
     "net.liftweb" %% "lift-squeryl-record" % liftVersion,
     "net.liftmodules" %% "lift-jquery-module_2.6" % "2.8",
     "net.databinder.dispatch" %% "dispatch-core" % "0.11.3",
